@@ -1,138 +1,94 @@
 package com.campus.model;
 
+// encapsulation - data hiding
+// instance variables
 public class Student {
     private int studentid;
     private String studentname;
-    private int age;
+    private int studentage;
     private String department;
-    private int[] marks;
+    private int[] marks;    
 
-    static int studentcount = 0;
-
-    public Student() {
-        studentcount++;
-    } 
-    //parameterized constructor
-    public Student(int studentid, String studentname, int age, String department, int[] marks) {
-        this.studentid = studentid;
-        this.studentname = studentname;
-        this.age = age;
-        this.department = department;
-        this.marks = marks;
-        studentcount++;
-    }
-    //getter and setter methods
-    public int getStudentid() {
-        return studentid;
-    }
-    public void setStudentid(int studentid) {
-        this.studentid = studentid;
-    }
-    public String getStudentname() {
-        return studentname;
-    }
-    public void setStudentname(String studentname) {
-        this.studentname = studentname;
-    }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
-    public String getDepartment() {
-        return department;
-    }
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-    public int[] getMarks() {
-        return marks;
-    }
-    public void setMarks(int[] marks) {
-        this.marks = marks;
-    }
-    // instance method - belongs to object
-    
-    }
-
-package com.campus.model;
-
-public class Student{
-    //Encapsulation - data hiding
-    //instance variables
-    private int studentid;
-    private String studentname;
-    private int age;
-    private String department;
-    private int[] marks;
-
-
-    //static variable
+// static variable
     static int studentCount = 0;
 
-    //Default constructor
+// default constructor
     public Student() {
         studentCount++;
     }
-    //parameterized constructor
-    public Student(int studentid, String studentname, int age, String department, int[] marks) {
+
+// parameterized constructor
+    public Student(int studentid, String studentname, int studentage, String department, int[] marks) {
         this.studentid = studentid;
         this.studentname = studentname;
-        this.age = age;
+        this.studentage = studentage;
         this.department = department;
         this.marks = marks;
         studentCount++;
     }
-    //getters
+
+// getters
     public int getStudentid() {
         return studentid;
     }
+
     public String getStudentname() {
         return studentname;
     }
-    public int getAge() {
-        return age;
+
+    public int getStudentage() {
+        return studentage;
     }
+
     public String getDepartment() {
         return department;
     }
+
     public int[] getMarks() {
         return marks;
     }
-    //setters
+
+// setters
     public void setStudentid(int studentid) {
         this.studentid = studentid;
     }
+
     public void setStudentname(String studentname) {
         this.studentname = studentname;
     }
-    public void setAge(int age) {
-        this.age = age;
+
+    public void setStudentage(int studentage) {
+        this.studentage = studentage;
     }
+
     public void setDepartment(String department) {
         this.department = department;
     }
+
     public void setMarks(int[] marks) {
         this.marks = marks;
     }
+
+//instance methods - belong to object
     public void displayStudentInfo() {
-        System.out.println("Student ID:"+studentid);
-        System.out.println("Student Name:"+studentname);
-        System.out.println("Student Age:"+age);
-        System.out.println("Student Department:"+department);
-        
+        System.out.println("Student ID: " + studentid);
+        System.out.println("Student Name: " + studentname);
+        System.out.println("Student Age: " + studentage);
+        System.out.println("Department: " + department);
+        System.out.print("Marks: ");
     }
+
     public void displayStudentInfo(boolean showMarks) {
         displayStudentInfo();
+
         if(showMarks) {
-            System.out.println("Student Marks:"+java.util.Arrays.toString(marks));
-            
-            }
+            System.out.println("Marks: " + java.util.Arrays.toString(marks));
         }
-        //static method-belong to class,not to object
-        public static void displayStudentCount() {
-            System.out.println("total number of students:"+studentCount);
     }
-    
+
+// static method - belong to class not object
+    public static void displayStudentCount() {
+        System.out.println("Total Students: " + studentCount);
+    }
+
 }
