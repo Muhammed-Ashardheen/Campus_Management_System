@@ -93,6 +93,8 @@ public class StudentService {
                 return 'D';}
             else{
                 return 'F';}    
+        }
+
                 //pass or fail
                 public String passorFail(Student student){
                     int[]marks=student.getMarks();
