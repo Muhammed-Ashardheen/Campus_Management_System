@@ -1,4 +1,4 @@
-public com.campus.model;
+package com.campus.model;
 
 public class ScholarshipStudent extends Student{
 
@@ -24,5 +24,13 @@ public class ScholarshipStudent extends Student{
     public void displayStudentInfo(boolean showMarks) {
         super.displayStudentInfo(showMarks);
         System.out.println("Scholarship Percentage: " + scholarshipPercentage);
+        @override
+        public void generatereport(){
+            System.out.println("Scholarship Student Report card");
+        }
+        @override
+        public void eligiblescholarship(){
+            System.out.println(" Eligible for scholarship");
+        }
     }
 }
