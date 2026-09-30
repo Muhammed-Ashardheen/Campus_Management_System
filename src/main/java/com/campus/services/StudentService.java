@@ -1,24 +1,38 @@
 package com.campus.services;
 
 import java.util.List;
-import java.util.ArrayList;
+import com.campus.dao.StudentDAO;
+import com.campus.model.Student;
 
-public class StudentService{
-    private static final List<String> student=new ArrayList<>();
+
+public class StudentService {
+
+    private final StudentDAO studentDAO;
+
+    public  StudentService(){
+        studentDAO = new StudentDAO();
+    }
     //get student
-    public StudentService(){
-        student.add("101-Billa-java");
-        student.add("102-steve-python");
-        student.add("103-john-c++");
-
+    public List<Student> getStudents() {
+        return studentDAO.getAllStudents();
+    }
+    //get student by id
+    public Student getStudentById(int id) {
+        return studentDAO.getStudentById(id);
     }
 
-    public List<String> getStudents(){
-        return student;
+    //add student
+    public void addStudent(String name,String department,int age){
+        studentDAO.addStudent(new Student(name,department,age));
     }
-//add student
-public void addStudent(String name,String course){
-    student.add(String.valueOf(student.size()+101)+"-"+name+"-"+course);
-}
-
+    
+    //update student
+    public void updateStudent(int id,String name,String department,int age){
+        studentDAO.updateStudent(new Student(id,name,department,age));
+    }
+    
+    //delete student
+    public void deleteStudent(int id){
+        studentDAO.deleteStudent(id);
+    }
 }
